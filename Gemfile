@@ -43,3 +43,6 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'ckeditor', '~> 4.0.6'
+gem 'paperclip'
+gem 'responders', '~> 2.0'
