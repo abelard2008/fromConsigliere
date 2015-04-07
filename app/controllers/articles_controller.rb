@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  require "html_truncator"
   load_and_authorize_resource
   before_filter :authenticate_user!, :except => [:index, :show]
   before_action :set_article, only: [:show, :edit, :update, :destroy]
@@ -27,6 +28,7 @@ class ArticlesController < ApplicationController
   # POST /articles.json
   def create
     @article = Article.new(article_params)
+    @article.preview = HTML_Truncator.truncate(@article.body, 300a)
 
     respond_to do |format|
       if @article.save
@@ -42,6 +44,7 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
+    @article.preview = HTML_Truncator.truncate(@article.body, 300a)
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }

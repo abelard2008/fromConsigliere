@@ -8,8 +8,20 @@
 // compiled file.
 //
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
+//= require syntaxhighliter/shCore.js
+//= require syntaxhighliter/shBrushBash.js
+//= require syntaxhighliter/shBrushAppleScript.js
+//= require syntaxhighliter/shBrushCpp.js
+//= require syntaxhighliter/shBrushCSharp.js
+//= require syntaxhighliter/shBrushCss.js
+//= require syntaxhighliter/shBrushJScript.js
+//= require syntaxhighliter/shBrushPlain.js
+//= require syntaxhighliter/shBrushRuby.js
+//= require syntaxhighliter/shBrushSass.js
+//= require syntaxhighliter/shBrushSql.js
+//= require syntaxhighliter/shBrushXml.js
 // about supported directives.
-
+//= require syntaxhighliter
 //= require bootstrap/bootstrap
 //= require jquery
 //= require jquery_ujs
