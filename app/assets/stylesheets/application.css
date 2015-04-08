@@ -1,18 +1,25 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require syntaxhighliter
- *= require bootstrap/bootstrap
- *= require_tree .
- *= require_self
- */
-body {padding-top: 50px;}
+//= require_tree .
+//= require_self
+//= require bootstrap/bootstrap
+//= require syntaxhighliter/shCore.css
+//= require syntaxhighliter/shCoreEclipse.css
+//= require syntaxhighliter/shCoreMDUltra.css
+//= require syntaxhighliter/shThemeDefault.css
+//= require syntaxhighliter/shThemeEmacs.css
+//= require syntaxhighliter/shThemeMidnight.css
+//= require syntaxhighliter/shCoreDefault.css
+//= require syntaxhighliter/shCoreEmacs.css
+//= require syntaxhighliter/shCoreMidnight.css
+//= require syntaxhighliter/shThemeDjango.css
+//= require syntaxhighliter/shThemeFadeToGrey.css
+//= require syntaxhighliter/shThemeRDark.css
+//= require syntaxhighliter/shCoreDjango.css
+//= require syntaxhighliter/shCoreFadeToGrey.css
+//= require syntaxhighliter/shCoreRDark.css
+//= require syntaxhighliter/shThemeEclipse.css
+//= require syntaxhighliter/shThemeMDUltra.css
+
+
+body {padding-top: 50px;
+      padding-left: 50px;
+     }

@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
-    @article = current_user
+
   end
 
   # GET /articles/1/edit
@@ -29,7 +29,8 @@ class ArticlesController < ApplicationController
   # POST /articles.json
   def create
     @article = Article.new(article_params)
-    @article.preview = HTML_Truncator.truncate(@article.body, 300a)
+    @article.preview = HTML_Truncator.truncate(@article.body, 300)
+    @article.user = current_user
 
     respond_to do |format|
       if @article.save
@@ -45,7 +46,7 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
-    @article.preview = HTML_Truncator.truncate(@article.body, 300a)
+    @article.preview = HTML_Truncator.truncate(@article.body, 300)
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }

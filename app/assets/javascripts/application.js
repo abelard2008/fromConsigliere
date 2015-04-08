@@ -21,10 +21,8 @@
 //= require syntaxhighliter/shBrushSql.js
 //= require syntaxhighliter/shBrushXml.js
 // about supported directives.
-//= require syntaxhighliter
 //= require bootstrap/bootstrap
 //= require jquery
 //= require jquery_ujs
 //= require ckeditor/init
-//= require turbolinks
 //= require_tree .
