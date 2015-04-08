@@ -7,7 +7,15 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    if user_signed_in?
+      if current_user.role.name == "Pardrone"
+        @articles = Article.all.order('created_at DESC')
+      else
+        @articles = Article.all.where(:published => true).order('created_at DESC')
+      end
+    else
+      @articles = Article.all.where(:published => true).order('created_at DESC')
+    end
   end
 
   # GET /articles/1
@@ -46,7 +54,7 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
-    @article.preview = HTML_Truncator.truncate(@article.body, 300)
+    @article.preview = HTML_Truncator.truncate(article_params[:body], 300)
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }

@@ -53,3 +53,7 @@ gem 'devise'
 gem 'html_truncator', '~> 0.3.1'
 
 gem 'thin'
+
+group :production do
+  gem 'therubyracer'
+end

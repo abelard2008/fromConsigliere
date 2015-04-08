@@ -1,62 +1,74 @@
 <!DOCTYPE html>
 <html>
     <head>
+	<%= javascript_include_tag "/assets/ckeditor/ckeditor" %>
+	<%= javascript_include_tag "/assets/ckeditor/init" %>
+	<%= javascript_include_tag "/assets/bootstrap/bootstrap" %>
+	<%= javascript_include_tag "/assets/syntaxhighliter/shCore" %>
+	<%= javascript_include_tag "/assets/syntaxhighliter/shBrushBash" %>
+	<%= javascript_include_tag "/assets/syntaxhighliter/shBrushCpp" %>
+	<%= javascript_include_tag "/assets/syntaxhighliter/shBrushCss" %>
+	<%= javascript_include_tag "/assets/syntaxhighliter/shBrushJScript" %>
+	<%= javascript_include_tag "/assets/syntaxhighliter/shBrushPlain" %>
+	<%= javascript_include_tag "/assets/syntaxhighliter/shBrushRuby" %>
+	<%= javascript_include_tag "/assets/syntaxhighliter/shBrushSql" %>
+	<%= javascript_include_tag "/assets/syntaxhighliter/shBrushXml" %>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!--[if lt IE 9]>
                 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
                 <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
+		<![endif]-->
 	<title>Consigliere</title>
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
 	<script type="text/javascript">
-	    SyntaxHighlighter.all();
+	 SyntaxHighlighter.all();
 	</script>
 
     </head>
-<body>
-    <!-- Navigation bar begin  -->
-    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-	<div class="container">
-	    <div class="navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-		    <span class="icon-bar"></span>
-		    <span class="icon-bar"></span>
-		    <span class="icon-bar"></span>
-		</button>
-		<%= link_to('Consigliere', root_path, :class => "navbar-brand") %>
-	    </div>
-	    <div class="collapse navbar-collapse">
-		<ul class="nav navbar-nav">
-		    <li class="active"><%= link_to('Home', root_path) %></li>
-		    <li><%= link_to('Blog', articles_path) %></li>
-		    <li><a href="#">Tutorials</a></li>
-		    <li><a href="#">Portfolio</a></li>
-		    <li><a href="#">About</a></li>
-		    <li><a href="#">Contact</a></li>
-		</ul>
-		<ul class="nav navbar-nav navbar-right">
-		    <% if user_signed_in? %>
-			<li><%= link_to('Sign Out', destroy_user_session_path, :method => :delete) %></li>
- 		    <% else %>
-			<li><%= link_to('Sign in', new_user_session_path) %></li>
-			<li><%= link_to('Register', new_user_registration_path) %></li>
+    <body>
+	<!-- Navigation bar begin  -->
+	<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+	    <div class="container">
+		<div class="navbar-header">
+		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		    </button>
+		    <%= link_to('Consigliere', root_path, :class => "navbar-brand") %>
+		</div>
+		<div class="collapse navbar-collapse">
+		    <ul class="nav navbar-nav">
+			<li class="active"><%= link_to('Home', root_path) %></li>
+			<li><%= link_to('Blog', articles_path) %></li>
+			<li><a href="#">Tutorials</a></li>
+			<li><a href="#">Portfolio</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Contact</a></li>
+		    </ul>
+		    <ul class="nav navbar-nav navbar-right">
+			<% if user_signed_in? %>
+			    <li><%= link_to('Sign Out', destroy_user_session_path, :method => :delete) %></li>
+ 			<% else %>
+			    <li><%= link_to('Sign in', new_user_session_path) %></li>
+			    <li><%= link_to('Register', new_user_registration_path) %></li>
 			<% end %>
-		</ul>
-	    </div><!-- /.nav-collapse -->
-	</div><!-- /.container -->
-    </div><!-- /.navbar -->
-    <!-- Navigation bar end -->
-    <% if notice %>
-	<div class="container alert alert-warning alert-dismissable">
-	    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
-		&times;
-	    </button>
-	    <p id="notice"><%= notice %></p>
-	</div>
-    <% end %>
-    <%= yield %>
+		    </ul>
+		</div><!-- /.nav-collapse -->
+	    </div><!-- /.container -->
+	</div><!-- /.navbar -->
+	<!-- Navigation bar end -->
+	<% if notice %>
+	    <div class="container alert alert-warning alert-dismissable">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+		    &times;
+		</button>
+		<p id="notice"><%= notice %></p>
+	    </div>
+	<% end %>
+	<%= yield %>
 
-</body>
+    </body>
 </html>

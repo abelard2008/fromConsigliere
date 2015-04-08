@@ -17,6 +17,9 @@ Bundler.require(*Rails.groups)
 module Consigliere
   class Application < Rails::Application
 
+    config.assets.precompile += Ckeditor.assets
+    config.assets.precompile += %w(ckeditor/*)
+    
     config.generators do |g|
       g.test_framework nil, :fixture => false
       g.stylesheets false
